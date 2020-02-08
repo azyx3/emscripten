@@ -1692,9 +1692,9 @@ class Building(object):
   # MinGW Makefiles, where sh.exe is not allowed to be present.
   @staticmethod
   def remove_sh_exe_from_path(env):
+    env = env.copy()
     if not WINDOWS:
       return env
-    env = env.copy()
     path = env['PATH'].split(';')
     path = [p for p in path if not os.path.exists(os.path.join(p, 'sh.exe'))]
     env['PATH'] = ';'.join(path)
