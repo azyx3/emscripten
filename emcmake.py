@@ -13,7 +13,7 @@ from tools import shared
 # Main run() function
 #
 def run():
-  configure_path = shared.path_from_root('emconfigure')
+  configure_path = shared.path_from_root('emconfigure.py')
   return subprocess.call([shared.PYTHON, configure_path] + sys.argv[1:])
 
 
